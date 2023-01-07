@@ -3,5 +3,5 @@ Formulario de ediccion de empleado <br><br>
     @csrf
     {{ method_field('PATCH') }}
 
-    @include('empleado.form');
+    @include('empleado.form')
 </form>

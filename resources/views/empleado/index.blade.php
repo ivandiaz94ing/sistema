@@ -1,10 +1,14 @@
+<link rel="stylesheet" href="/sistema/resources/css/app.css">
 Mostrar lista de empleados
+<br>
+<a href="{{url('empleado/create')}} " class="a-title">Registrar nuevo </a>
+<br>
 <table class="table table-light">
    
 <thead class="thead-light">
         <tr>
-            <th>#</th>
             <th> Foto</th>
+            <th>#</th>
             <th>Nombre</th>
             <th>Apellido Paterno</th>
             <th>Apellido Materno</th>
@@ -17,11 +21,11 @@ Mostrar lista de empleados
             @foreach( $empleados as $empleado)
             <tr>
                 <td>
-                <img  width="100" src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen del empleado {{ $empleado->Nombre }}">
+                        <img  width="50" src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen del empleado {{ $empleado->Nombre }}">
                 </td>
 
                 <td>{{ $empleado->id }}</td>
-                <td>{{ $empleado->Foto }}</td>
+                
                 <td>{{ $empleado->Nombre }}</td>
                 <td>{{ $empleado->ApellidoPaterno }}</td>
                 <td>{{ $empleado->ApellidoMaterno }}</td>

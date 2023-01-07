@@ -1,24 +1,30 @@
+<link rel="stylesheet" href="/sistema/resources/css/app.css">
 Formulario que tiene datos en común con create y edit <br><br>
+
 <label for="Nombre">Nombre</label>
-    <input type="text" name="Nombre" value="{{ $empleado->Nombre }}" id="Nombre">
+    <input type="text" name="Nombre" value="{{ isset($empleado->Nombre) ?$empleado->Nombre: ' ' }}" id="Nombre">
     <br><br>
 
     <label for="ApellidoPaterno">Apellido Paterno</label>
-    <input type="text" name="ApellidoPaterno" value="{{ $empleado->ApellidoPaterno }}" id="ApellidoPaterno">
+    <input type="text" name="ApellidoPaterno" value="{{ isset($empleado->ApellidoPaterno) ?$empleado->ApellidoPaterno: ' ' }}" id="ApellidoPaterno">
     <br><br>
     
     <label for="ApellidoMaterno">Apellido Materno</label>
-    <input type="text" name="ApellidoMaterno" value="{{ $empleado->ApellidoMaterno }}" id="ApellidoMaterno">
+    <input type="text" name="ApellidoMaterno" value="{{ isset($empleado->ApellidoMaterno) ?$empleado->ApellidoMaterno: ' ' }}" id="ApellidoMaterno">
     <br><br>
 
     <label for="Correo">Correo</label>
-    <input type="text" name="Correo" value="{{ $empleado->Correo }}" id="Correo">
+    <input type="text" name="Correo" value="{{ isset($empleado->Correo) ?$empleado->Correo: ' '  }}" id="Correo">
     <br><br>
 
 
-    <label for="Foto">Foto</label>
-    {{ $empleado->Foto }}
+    <label for="Foto">Foto</label><br>
+
+    @if (isset($empleado->Nombre))
+    <img  width="50" src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen del empleado {{ $empleado->Nombre }}"><br>
+    @endif
     <input type="file" name="Foto" id="Foto">
     <br><br>
     <input type="submit" value="Guardar datos">
     <br><br>
+    <a href=" {{ url('empleado') }} " class="a-title">Regresar al inicio</a>
