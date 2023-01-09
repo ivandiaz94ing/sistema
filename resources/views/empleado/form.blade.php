@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/sistema/resources/css/app.css">
-
 <h2>{{$modo}} Empleado</h2> <br><br>
 
 <label for="Nombre">Nombre</label>
