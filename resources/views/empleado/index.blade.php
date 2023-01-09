@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="/sistema/resources/css/app.css">
 Mostrar lista de empleados
 <br>
+
+@if(Session::has('mensaje'))
+{{ Session::get('mensaje') }}
+@endif
+<br>
 <a href="{{url('empleado/create')}} " class="a-title">Registrar nuevo </a>
 <br>
 <table class="table table-light">
